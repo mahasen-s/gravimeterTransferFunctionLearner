@@ -21,14 +21,14 @@ acc_subseq_u        = zeros(subseq_length,size(data.ai_u,1));
 acc_subseq_d        = zeros(subseq_length,size(data.ai_d,1));
 
 for i=1:N_u
-    acc_subseq_u(:,i)   = data.acc(inds.inds_u_init(i)+1:inds.inds_u_end(i),2);
+    acc_subseq_u(:,i)   = data.acc(inds.inds_u_init(i)+1:inds.inds_u_end(i),4);
     if mod(i,100)==0
         fprintf('%4.3f%%\n',100*i/N_u)
     end
 end
 
 for i=1:N_d
-    acc_subseq_d(:,i)   = data.acc(inds.inds_d_init(i)+1:inds.inds_d_end(i),2);
+    acc_subseq_d(:,i)   = data.acc(inds.inds_d_init(i)+1:inds.inds_d_end(i),4);
     if mod(i,100)==0
         fprintf('%4.3f%%\n',100*i/N_d)
     end
