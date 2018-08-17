@@ -17,13 +17,13 @@ inds_d      = discretize(data.ai_d(:,1),acc_edges);
 
 % Compute nearest accelerometer timestamp for each ai_u, ai_d timestamp
 % at end of interferometer (i.e. timestamp + T + tau)
-t_offset   = data.T + data.tau;
+t_offset   = data.T + 2*data.tau;
 inds_u_end = discretize(data.ai_u(:,1)+t_offset,acc_edges);
 inds_d_end = discretize(data.ai_d(:,1)+t_offset,acc_edges);
 
 % Compute nearest accelerometer timestamp for each ai_u, ai_d timestamp
 % at before interferometer (i.e. timestamp - T - tau - t_delay)
-t_offset   = -(data.T + data.tau + t_delay);
+t_offset   = -(data.T + 2*data.tau + t_delay);
 inds_u_ini = discretize(data.ai_u(:,1)+t_offset,acc_edges);
 inds_d_ini = discretize(data.ai_d(:,1)+t_offset,acc_edges);
 
