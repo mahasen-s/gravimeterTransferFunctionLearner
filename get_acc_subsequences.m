@@ -10,7 +10,7 @@ acc_col             = 2;
 
 first_half_length   = max(cat(1,inds.inds_u-inds.inds_u_ini,inds.inds_d-inds.inds_d_ini));
 second_half_length  = max(cat(1,inds.inds_u_end-inds.inds_u,inds.inds_d_end-inds.inds_d));
-subseq_length     = first_half_length + second_half_length;
+subseq_length       = first_half_length + second_half_length;
 
 % Reassign indices
 inds.inds_u_init    = inds.inds_u - first_half_length;
