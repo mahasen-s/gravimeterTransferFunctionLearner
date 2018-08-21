@@ -14,4 +14,4 @@ subseqs = get_acc_subsequences(data,inds);
 data = getDriftCorrection(data);
 
 % Write to file
-write_all_hdf5(data,subseqs,'campaign4a_proc.h5')
+write_all_hdf5(data,subseqs,'campaign4a_proc_trunc.h5')
