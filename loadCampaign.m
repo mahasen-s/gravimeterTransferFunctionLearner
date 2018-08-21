@@ -2,6 +2,7 @@ function data = loadCampaign(fname)
 if ~exist('fname','var')
     fname = './ChrisFreierPhDCampaigns/campaign4a.h5';
 end
+fprintf('Loading %s\n',fname)
 
 acc             = h5read(fname,'/accelerometer');
 ai_kdown        = h5read(fname,'/ai_kdown');
