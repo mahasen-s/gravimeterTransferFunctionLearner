@@ -8,7 +8,7 @@ function data = get_preprocessed_data(data,t_cutoff,t_delay)
 
 t_cutoff_ai     = t_cutoff+t_delay+data.T+2*data.tau;
 
-cut_fun  = @(x,t) x(x>t,:);
+cut_fun         = @(x,t) x(x(:,1)>t,:);
 
 data.acc        = cut_fun(data.acc,t_cutoff);
 data.ai_u       = cut_fun(data.ai_u,t_cutoff_ai);
