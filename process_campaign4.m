@@ -1,8 +1,10 @@
 % Load hdf5 file
-data = loadCampaign;
+data = loadCampaign('./ChrisFreierPhDCampaigns/campaign4.h5');
 
 % Remove spurious data
-data = get_preprocessed_data_4a(data);
+t_cutoff        = 0;%3.633399834260200e+09;
+t_delay  = 100e-3; % This is the same as in get_acc_ind
+data = get_preprocessed_data(data,t_cutoff,t_delay);
 
 % Assign subsequence of accelerometer indicies to each value in ai_kup
 inds = get_acc_inds(data);
@@ -14,4 +16,4 @@ subseqs = get_acc_subsequences(data,inds);
 data = getDriftCorrection(data);
 
 % Write to file
-write_all_hdf5(data,subseqs,'campaign4a_proc_trunc.h5')
+write_all_hdf5(data,subseqs,'./ChrisFreierPhDCampaigns/campaign4_proc.h5')
