@@ -1,4 +1,4 @@
-function data = getDriftCorrection(data)
+function data = getDriftCorrection(data,time_window)
 % THIS IS NOT CORRECT; there are sharp shifts at the boundaries, and a
 % general positive drift.
 
@@ -7,7 +7,7 @@ function data = getDriftCorrection(data)
 
 
 % Averaging window: 30 min
-time_window = 30*60;
+%time_window       = 30*60;
 
 ai_u_smooth       = smoothdata(data.ai_u(:,2),'movmean',time_window,'SamplePoints',data.ai_u(:,1));
 ai_d_smooth       = smoothdata(data.ai_d(:,2),'movmean',time_window,'SamplePoints',data.ai_d(:,1));
