@@ -1,10 +1,10 @@
-function inds = get_acc_inds(data)
+function inds = get_acc_inds(data,t_delay)
 % Assign subsequence of accelerometer indices to each value in ai_u, and
 % ai_d.
 % We pick some time delat t_delay corresponding to a phase offset in the
 % transfer function
 tic
-t_delay     = 100e-3; % ~ 30 points
+%t_delay     = 100e-3; % ~ 30 points
 
 % Noting that accelerometer data is not evenly spaced, we pre-compute the
 % center of bins that we later use with discretize
