@@ -1,5 +1,5 @@
 # Transfer Function Learner
-Learning the transfer function of a black-box system using DNNs.
+Learning the transfer function of a atom-interferometer gravimeter (treated as a black-box system) using DNNs.
 
 `./matlab` contains code for preprocessing raw experimental data. (`./matlab/process_campagin4.m`) shows the whole process.
 
